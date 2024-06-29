@@ -1,21 +1,26 @@
 # eth-Intermediate-mod_1
 ## Overview
-The UniversityEligibility contract is designed to manage and verify the eligibility of a student based on their score for different types of universities (IIT, NIT, private universities, and any university). The contract includes functionalities to update and check student scores using require(), assert(), and revert() statements. Only the contract administrator can update the student scores.
+The contract InstituteEligibility is designed to manage and verify the eligibility of a student based on their score for different types of universities (IIT, NIT, private universities, and any university). The contract includes functionalities to update and check student scores using require(), assert(), and revert() statements. Only the contract administrator can update the student scores.
 
 ## Contract Details
 ### State Variables
-uint256 public score: Stores the score of the student, initialized to 30.
+       uint256 public score
+Stores the score of the student, initialized to 30.
 
-address public administrator: Stores the address of the contract administrator (the deployer).
+       address public administrator
+Stores the address of the contract administrator (the deployer).
 
 ### Events
-event ScoreUpdated(uint256 newScore): Logs when the student score is updated.
+       event ScoreUpdated(uint256 newScore)
+Logs when the student score is updated.
 
 ### Modifiers
-modifier onlyAdmin(): Restricts certain functions to be callable only by the contract administrator. It uses require() to check if the caller is the administrator.
+       modifier onlyAdmin()
+Restricts certain functions to be callable only by the contract administrator. It uses require() to check if the caller is the administrator.
 
 ### Constructor
-constructor(): Sets the contract deployer as the administrator using msg.sender.
+       constructor()
+Sets the contract deployer as the administrator using msg.sender.
 
 ### Functions
 1.     validateIITEligibility
